@@ -12,9 +12,13 @@
 	//function go here => what we want to have to happen when our triggers fire
 	function changeImageSet() {
 		//change thumbnail images on the left to match the button image
-	pieces.forEach((piece, index) => {
-	 puzzlePiece[index].src=`images/${piece + this.dataset.puzzleindex}.jpg`;
-	puzzlePiece[index].id=`${piece + this.dataset.puzzleindex}`;
+		temp = document.querySelector('.puzzle-pieces');
+		pieces.forEach((piece, index) => {
+			puzzlePiece[index].src=`images/${piece + this.dataset.puzzleindex}.jpg`;
+			puzzlePiece[index].id=`${piece + this.dataset.puzzleindex}`;
+			pieceimg = document.querySelector(`#${puzzlePiece[index].id}`);
+			pieceimg.style.width = '40%';
+			temp.appendChild(pieceimg);
 	});
 		//change the thumbnail images on the left to match the drop zone container
 		//and set a background image on thw drop zone container
